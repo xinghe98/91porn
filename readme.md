@@ -23,4 +23,4 @@ python 91.py即可运行脚本
 
 # 如果你愿意，可以请我喝杯卡布奇诺：
 
-![付款码](https://github.com/xinghe98/91porn/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190520112655.jpg)
+![付款码](https://github.com/xinghe98/91porn/blob/master/1.jpg)
