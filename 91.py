@@ -5,11 +5,20 @@ import time
 from tqdm import tqdm
 import re
 import execjs
+import random
+
+def random_ip():
+    a=random.randint(1,255)
+    b=random.randint(1,255)
+    c=random.randint(1,255)
+    d=random.randint(1,255)
+    return(str(a)+'.'+str(b)+'.'+str(c)+'.'+str(d))
 
 header = {"Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
                   "Proxy-Connection": "keep-alive",
                   "cookie": "请手动添加",
-                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36'
+                  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36',
+	  'X-Forwarded-For':random_ip()
                   }
 
 
