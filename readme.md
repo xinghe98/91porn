@@ -1,3 +1,7 @@
+# 2020-11-02
+网站规则已更改，本项目有空再更新
+
+
 # python所需要的库：
 pip install requests
 
