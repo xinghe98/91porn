@@ -37,15 +37,7 @@ NEWSPIDER_MODULE = 'porn.spiders'
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-    ':authority': '91porn.com',
-    ':method': 'GET',
-    ':path': '/v.php',
-    ':scheme': 'https',
-    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,'
-              'application/signed-exchange;v=b3;q=0.9',
-    'accept-encoding': 'gzip, deflate, br',
-    'accept-language': 'zh-CN,zh;q=0.9',
-'cookie': '__utmz=50351329.1653903918.2.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); CLIPSHARE=re1hjkl6bjo1dabj8v28hp0bu2; __utma=50351329.1524949264.1653884709.1653911905.1653922595.6; __utmb=50351329.0.10.1653922595; __utmc=50351329; __cf_bm=oy0wJfKxPSM10iioffBq2bRBe9mBiYqGxZ4pfhLRv.w-1653922595-0-AcbjnRNaeKdSdzrDZsblUWqw0lC1swxg3Nq8uUjtiyJqonT2soOEXB8XOkCqMoWGXwX3A5R+S9nV02tX1LMsOsizsLehcopsdw/X2pOOphu1ZE7w9A1ORAV3bPIh3z8j3g=='
+    'Host': '91porn.com',
 }
 
 # Enable or disable spider middlewares

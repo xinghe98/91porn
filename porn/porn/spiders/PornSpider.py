@@ -1,6 +1,7 @@
 import scrapy
 import re
 
+
 class PornspiderSpider(scrapy.Spider):
     name = 'PornSpider'
     allowed_domains = ['91porn.com']
@@ -8,7 +9,8 @@ class PornspiderSpider(scrapy.Spider):
 
     def parse(self, response):
         data = re.findall(r'<a href="(https://91porn\.com/view_video\.php\?.*?)">', response.text)
-        print(data)
-        print(response.request.headers)
+        for url in data:
+            yield scrapy.Request(url=url, callback=self.parse_detail)
 
-
+    def parse_detail(self, response):
+        pass
