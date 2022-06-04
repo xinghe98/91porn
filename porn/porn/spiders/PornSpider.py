@@ -1,7 +1,6 @@
 import scrapy
 import re
 from porn.items import PornItem
-import re
 
 class PornspiderSpider(scrapy.Spider):
     name = 'PornSpider'
@@ -26,4 +25,9 @@ class PornspiderSpider(scrapy.Spider):
             id = re.findall(r'id="playvthumb_(\d+)"',info)[0]
             items['video_url'] = 'https://la.killcovid2021.com/m3u8/{id}/{id}.m3u8'.format(id=id)
             yield items
-            
+            break
+        next = response.xpath('//div[@id="paging"]//form/a')
+        if next.xpath('.//text()').getall()[-1] == '»':
+            next_page = next.xpath('.//@href').getall()[-1]
+            url = 'https://91porn.com/v.php' + next_page
+            yield scrapy.Request(url=url,callback=self.parse)
