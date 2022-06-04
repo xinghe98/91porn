@@ -7,6 +7,9 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+LOG_FILE="log.txt"
+LOG_LEVEL = 'DEBUG'
+
 BOT_NAME = 'porn'
 
 SPIDER_MODULES = ['porn.spiders']
@@ -38,6 +41,7 @@ NEWSPIDER_MODULE = 'porn.spiders'
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
     'Host': '91porn.com',
+    'accept-language': 'zh-CN,zh;q=0.9'
 }
 
 # Enable or disable spider middlewares
@@ -60,9 +64,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    'porn.pipelines.PornPipeline': 300,
-# }
+ITEM_PIPELINES = {
+   'porn.pipelines.PornPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
