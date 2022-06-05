@@ -3,8 +3,8 @@
 
 
 # python所需要的库：
-pip install scrapy
-pip install pymongo
++ pip install scrapy
++ pip install pymongo
 
 # 使用方法：
 ```shell
