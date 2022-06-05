@@ -1,22 +1,18 @@
-# 2020-11-02
-网站规则已更改，本项目有空再更新
+# 2022-06-05
+此仓库已用Scrapy重构
 
 
 # python所需要的库：
-pip install requests
-
-pip install lxml
-
-pip install tqdm
-
-pip install execjs
++ pip install scrapy
++ pip install pymongo
 
 # 使用方法：
-python 91.py即可运行脚本
+```shell
+scrapy crawl PornSpider
+```
 
 # 说明：
-+ 91视频真实地址采用了js动态生成的方式，execjs库帮助我们拿到真实地址
-+ tqdm库用于显示视频下载进度
++ 该网站现视频为m3u8格式文件，但也可以变成视频
 + 此脚本仅供交流学习使用
 + 如有其他更多更好的建议请告诉我
 
