@@ -7,19 +7,19 @@
 # useful for handling different item types with a single interface
 import pymongo
 from itemadapter import ItemAdapter
+from porn.units import MONGO_URI
 
 
 class PornPipeline:
     collection_name = 'porn'
 
-    def __init__(self, mongo_uri, mongo_db):
-        self.mongo_uri = mongo_uri
+    def __init__(self, mongo_db):
+        self.mongo_uri = MONGO_URI
         self.mongo_db = mongo_db
 
     @classmethod
     def from_crawler(cls, crawler):
         return cls(
-            mongo_uri=crawler.settings.get('MONGO_URI'),
             mongo_db=crawler.settings.get('MONGO_DATABASE')
         )
 

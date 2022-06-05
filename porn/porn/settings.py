@@ -14,8 +14,10 @@ BOT_NAME = 'porn'
 
 SPIDER_MODULES = ['porn.spiders']
 NEWSPIDER_MODULE = 'porn.spiders'
-MONGO_URI = 'mongodb://109.236.63.125:27017/'
 MONGO_DATABASE = 'demo'
+RETRY_ENABLED: True
+RETRY_TIMES: 20
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'porn (+http://www.yourdomain.com)'
 
@@ -55,6 +57,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'porn.middlewares.RandomUserAgentMiddleware': 543,
+    'porn.middlewares.ProxyMiddleware' : 544
 }
 
 # Enable or disable extensions

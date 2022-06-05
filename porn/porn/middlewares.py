@@ -1,15 +1,6 @@
 import random
-from units import get_proxy
-
-
-def random_ip():
-    m = random.randint(0, 255)
-    n = random.randint(0, 255)
-    x = random.randint(0, 255)
-    y = random.randint(0, 255)
-    ip = str(m) + '.' + str(n) + '.' + str(x) + '.' + str(y)
-    return ip
-
+from porn.units import get_proxy
+import base64
 
 class RandomUserAgentMiddleware(object):
     def __init__(self):
@@ -34,10 +25,12 @@ class RandomUserAgentMiddleware(object):
 
     def process_request(self, request, spider):
         request.headers['User-Agent'] = random.choice(self.user_agent)
-        request.headers['x-forwarded-for'] = random_ip()
 
 
 class ProxyMiddleware(object):
 
     def process_request(self, request, spider):
+        auth = '7894ab:bec5cc43'
         request.meta['proxy'] = get_proxy()
+        auth = base64.b64encode(bytes(auth, 'utf-8'))
+        request.headers['Proxy-Authorization'] = b'Basic ' + auth
