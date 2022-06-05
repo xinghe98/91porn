@@ -1,6 +1,15 @@
 import random
 
 
+def random_ip():
+    m = random.randint(0, 255)
+    n = random.randint(0, 255)
+    x = random.randint(0, 255)
+    y = random.randint(0, 255)
+    ip = str(m) + '.' + str(n) + '.' + str(x) + '.' + str(y)
+    return ip
+
+
 class RandomUserAgentMiddleware(object):
     def __init__(self):
         self.user_agent = [
@@ -10,3 +19,4 @@ class RandomUserAgentMiddleware(object):
 
     def process_request(self, request, spider):
         request.headers['User-Agent'] = random.choice(self.user_agent)
+        request.headers['x-forwarded-for'] = random_ip()

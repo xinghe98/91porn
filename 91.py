@@ -1,4 +1,12 @@
-import requests
-headers = {'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.62 Safari/537.36'}
-data = requests.get('https://91porn.com/v.php',headers=headers,verify=False)
-print(data)
+import random
+
+
+def random_ip():
+    m = random.randint(0, 255)
+    n = random.randint(0, 255)
+    x = random.randint(0, 255)
+    y = random.randint(0, 255)
+    ip = str(m) + '.' + str(n) + '.' + str(x) + '.' + str(y)
+    return ip
+
+print(random_ip())
