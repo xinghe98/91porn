@@ -7,8 +7,8 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-LOG_FILE="log.txt"
-LOG_LEVEL = 'ERROR'
+# LOG_FILE="log.txt"
+LOG_LEVEL = 'DEBUG'
 
 BOT_NAME = 'porn'
 
