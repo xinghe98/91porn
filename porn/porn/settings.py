@@ -16,7 +16,9 @@ SPIDER_MODULES = ['porn.spiders']
 NEWSPIDER_MODULE = 'porn.spiders'
 MONGO_DATABASE = 'demo'
 RETRY_ENABLED: True
-RETRY_TIMES: 20
+RETRY_TIMES: 20  #重试次数
+CONCURRENT_REQUESTS: 8 #并发数
+DOWNLOAD_TIMEOUT = 300 #超时时间
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'porn (+http://www.yourdomain.com)'

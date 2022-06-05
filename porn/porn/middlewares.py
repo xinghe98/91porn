@@ -1,6 +1,8 @@
 import random
 from porn.units import get_proxy
 import base64
+from twisted.internet.error import TCPTimedOutError, TimeoutError
+
 
 class RandomUserAgentMiddleware(object):
     def __init__(self):
@@ -29,7 +31,16 @@ class RandomUserAgentMiddleware(object):
 
 class ProxyMiddleware(object):
 
-    def process_request(self, request, spider):
+    def process_exception(self, request, exception, spider):
+        if isinstance(exception, TimeoutError):
+            self.process_request_back(request, spider)  # 连接超时才启用代理ip机制
+            return request
+
+        elif isinstance(exception, TCPTimedOutError):
+            self.process_request_back(request, spider)
+            return request
+
+    def process_request_back(self, request, spider):
         auth = '7894ab:bec5cc43'
         request.meta['proxy'] = get_proxy()
         auth = base64.b64encode(bytes(auth, 'utf-8'))
