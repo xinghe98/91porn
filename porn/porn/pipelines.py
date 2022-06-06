@@ -11,7 +11,7 @@ from porn.units import MONGO_URI
 
 
 class PornPipeline:
-    collection_name = 'porn'
+    collection_name = 'porns'
 
     def __init__(self, mongo_db):
         self.mongo_uri = MONGO_URI
