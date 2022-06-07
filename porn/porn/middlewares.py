@@ -28,6 +28,7 @@ class RandomUserAgentMiddleware(object):
     def process_request(self, request, spider):
         request.headers['User-Agent'] = random.choice(self.user_agent)
 
+class ProxyMiddleware(object):
 
     def process_request(self, request, spider):
         request.meta['max_retry_times'] = 20
