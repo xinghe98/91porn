@@ -1,5 +1,5 @@
 import random
-from porn.units import get_proxy,get_ipidea
+from porn.units import get_proxy
 import base64
 from twisted.internet.error import TCPTimedOutError, TimeoutError
 
@@ -33,6 +33,6 @@ class ProxyMiddleware(object):
     def process_request(self, request, spider):
         request.meta['max_retry_times'] = 20
         auth = '7894ab:bec5cc43'
-        request.meta['proxy'] = get_ipidea()
+        request.meta['proxy'] = get_proxy()
         auth = base64.b64encode(bytes(auth, 'utf-8'))
         request.headers['Proxy-Authorization'] = b'Basic ' + auth
