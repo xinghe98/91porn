@@ -17,7 +17,7 @@ scrapy crawl PornSpider
 + 如有其他更多更好的建议请告诉我
 
 # 关于作者：
-邮箱：mystarandbell@163.com
+邮箱：1176103825@qq.com
 
 
 # 如果你愿意，可以请我喝杯卡布奇诺：
