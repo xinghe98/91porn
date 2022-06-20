@@ -32,7 +32,6 @@ class ProxyMiddleware(object):
             proxy = 'https://' + str(ip) + ':' + str(port)
             request.meta['proxy'] = proxy
             auths = '7894ab:bec5cc43'#代理ip服务商提供的账号密码
-            auth = base64.b64encode(bytes(auths, 'utf-8'))
             request.headers['Proxy-Authorization'] = b'Basic ' + auth
 
 
