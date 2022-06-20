@@ -1,0 +1,14 @@
+setup.py
+porn/__init__.py
+porn/items.py
+porn/middlewares.py
+porn/pipelines.py
+porn/settings.py
+porn/units.py
+porn/spiders/PornSpider.py
+porn/spiders/__init__.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt
