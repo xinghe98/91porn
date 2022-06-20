@@ -14,11 +14,8 @@ BOT_NAME = 'porn'
 
 SPIDER_MODULES = ['porn.spiders']
 NEWSPIDER_MODULE = 'porn.spiders'
-MONGO_DATABASE = 'demo'
-RETRY_ENABLED: True
-RETRY_TIMES: 20  #重试次数
-CONCURRENT_REQUESTS: 8 #并发数
-DOWNLOAD_TIMEOUT = 300 #超时时间
+MONGO_DATABASE = '91'
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'porn (+http://www.yourdomain.com)'
@@ -94,3 +91,8 @@ ITEM_PIPELINES = {
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+RETRY_ENABLED: True
+RETRY_TIMES: 5  #重试次数
+CONCURRENT_REQUESTS: 4 #并发数
+DOWNLOAD_TIMEOUT = 300 #超时时间
+RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408,403]
