@@ -14,7 +14,9 @@ proxy_url = '你使用的代理ip服务商提供的接口地址'
 MONGO_URI = 'mongodb://127.0.0.1:27017/'#数据库地址
 
 ```
-2. 运行项目
+2. 请自己创建一个`m.js`文件，并修改`PornSpider.py`文件内的js路径，js文件内容见`m.js`文件
+
+3. 运行项目
 ```shell
 scrapy crawl PornSpider
 ```

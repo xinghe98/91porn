@@ -4,7 +4,7 @@ import re
 from porn.items import PornItem
 from urllib.parse import unquote
 
-with open('/root/m.js', 'r', encoding='UTF-8') as f:
+with open('/root/m.js', 'r', encoding='UTF-8') as f:# 请自行修改js文件目录
     js_code = f.read()
 context = execjs.compile(js_code)
 
